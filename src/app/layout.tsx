@@ -17,19 +17,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>
-          <div>TNF</div>
-          <nav>
-            <div>보드게임</div>
-            <div>새소식</div>
-            <div>소개</div>
-          </nav>
-          <div>
-            <div>장바구니</div>
-            <div>로그인</div>
+        <header className="bg-black text-white grid place-items-center">
+          <div className="py-4 px-6 flex justify-between w-full max-w-[1200px]">
+            <div>TNF</div>
+            <nav className="flex gap-4">
+              <div>보드게임</div>
+              <div>새소식</div>
+              <div>소개</div>
+            </nav>
+            <div className="flex gap-4">
+              <div>장바구니</div>
+              <div>로그인</div>
+            </div>
           </div>
         </header>
-        {children}
+        <main className="w-full max-w-[1200px] min-h-screen bg-slate-600 mx-auto">
+          {children}
+        </main>
         <footer>
         </footer>
       </body>
