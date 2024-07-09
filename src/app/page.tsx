@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Logout from "@/component/Logout";
-import UserDataBtn from "@/component/UserDataBtn";
+import Logout from "@/app/component/Logout";
+import UserDataBtn from "@/app/component/UserDataBtn";
 
 export default async function Home() {
   return (

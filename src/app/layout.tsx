@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Navbar from "@/app/component/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,23 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body className={inter.className}>
         <header className="bg-black text-white grid place-items-center">
-          <div className="py-4 px-6 flex justify-between w-full max-w-[1200px]">
-            <div>TNF</div>
-            <nav className="flex gap-4">
-              <div>보드게임</div>
-              <div>새소식</div>
-              <div>소개</div>
-            </nav>
+          <div className="px-6 flex justify-between items-center h-12 w-full max-w-[1200px]">
+            <Link href={'/'} className=""><div>TNF</div></Link>
+            <Navbar />
             <div className="flex gap-4">
               <div>장바구니</div>
               <div>로그인</div>
             </div>
           </div>
         </header>
-        <main className="w-full max-w-[1200px] min-h-screen bg-slate-600 mx-auto">
+        <main className="w-full max-w-[1200px] min-h-screen bg-slate-600 mx-auto flex flex-col items-center">
           {children}
         </main>
         <footer>
