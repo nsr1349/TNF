@@ -1,5 +1,15 @@
+import Card from "../component/Card";
+
 export default function Boardgame() {
   return (
-    <div>보드게임 탭</div>
+    <>
+    <div className="flex">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+      
+    </>
   );
 }

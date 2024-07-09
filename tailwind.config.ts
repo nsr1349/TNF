@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        '3/4' : '6 / 10',
+        '4/5' : '9 /10'
+      },
     },
   },
   plugins: [],
