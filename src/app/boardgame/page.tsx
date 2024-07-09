@@ -4,7 +4,7 @@ export default function Boardgame() {
   return (
     <>
     <div className="flex">
-      <Card />
+      <Card href="/boardgame/1"/>
       <Card />
       <Card />
       <Card />
