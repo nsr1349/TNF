@@ -1,6 +1,6 @@
 export const BoardgameDetailItem = {
     _id : '1',
-    image : '/public/덤불속.png',
+    image : '/덤불속.png',
     title : '덤불속',
     ageCut : 9,
     peopleCut : '2~5인용',

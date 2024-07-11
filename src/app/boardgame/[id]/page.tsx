@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import { BoardgameDetailItem } from "./mocks"
 
 interface BoardgameDetailProps {
@@ -15,44 +14,49 @@ export default function BoardgameDetail({ params }: BoardgameDetailProps) {
 
   return (
     <>
-      <section>
-        <div>
-          <div className='aspect-square overflow-hidden'>
-              <Image className="h-full object-cover" src={image} alt={title} width={500} height={500}/>
+      <section className="flex w-full max-w-[900px] mt-14 gap-16">
+        <div >
+          <div className='aspect-square overflow-hidden border-zinc-900 border-2'>
+              <Image className="h-full object-cover scale-75" src={image} alt={title} width={420} height={420}/>
           </div>
           <div className='overflow-hidden'>
               {/* <Image className="h-full object-cover" src={'https://popcontr2632.cdn-nhncommerce.com/data/goods/23/11/48/93401/93401_main_03.jpg'} alt="너구리" width={500} height={500}/> */}
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              <h1>{title}</h1>
-              <span>{`${ageCut}세 이상, ${peopleCut}, ${playTime}`}</span>
+        <div className="flex-grow flex flex-col">
+          <div className="flex mb-8">
+            <div className="flex-grow">
+              <h1 className="text-3xl font-extrabold">{title}</h1>
+              <p className="text-zinc-500 mt-4">{`${ageCut}세 이상, ${peopleCut}, ${playTime}`}</p>
             </div>
             <div>d</div>
           </div>
           <table>
-              <tr>
-                <td>브랜드</td>
-                <td>{brand}</td>
-              </tr>
-              <tr>
-                <td>장르</td>
-                <td>{genre}</td>
-              </tr>
-              <tr>
-                <td>베송비</td>
-                <td>{deliveryCharge}</td>
-              </tr>
-              <tr>
-                <td>적립금</td>
-                <td>{point}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="text-zinc-500 w-20">브랜드</td>
+                  <td>{brand}</td>
+                </tr>
+                <tr>
+                  <td className="text-zinc-500">장르</td>
+                  <td>{genre.join(', ')}</td>
+                </tr>
+                <tr>
+                  <td className="text-zinc-500">베송비</td>
+                  <td>{deliveryCharge}원</td>
+                </tr>
+                <tr>
+                  <td className="text-zinc-500">적립금</td>
+                  <td>{point}p</td>
+                </tr>
+              </tbody>
           </table>
-          <hr />
-          <h1>{price}</h1>
-          <button></button>
+          <div className="flex-grow"></div>
+          <div>
+            <hr className="border-zinc-900"/>
+            <h1 className="text-3xl font-extrabold my-8">{price}<span className="text-xl font-medium"> won</span></h1>
+            <button className="w-full bg-white text-zinc-950 text-lg font-bold py-2 hover:bg-point hover:text-white transition-all duration-200 ">장바구니 담기</button>
+          </div>
         </div>
       </section>
       <section>

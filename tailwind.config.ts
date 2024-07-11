@@ -12,6 +12,9 @@ const config: Config = {
         '3/4' : '6 / 10',
         '4/5' : '9 /10'
       },
+      colors : {
+        'point' : '#2CC597'
+      }
     },
   },
   plugins: [],
