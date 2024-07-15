@@ -7,7 +7,7 @@ export default function Navbar() {
     const path = usePathname()
 
     return (
-        <nav className="flex gap-4 h-full">
+        <nav className="flex gap-4 h-full flex-grow">
             {
                 navList.map(({href,text})=> 
                     <Link 
