@@ -5,9 +5,9 @@ export default function Boardgame() {
     <>
     <div className="flex">
       <Card href="/boardgame/1"/>
+      {/* <Card />
       <Card />
-      <Card />
-      <Card />
+      <Card /> */}
     </div>
       
     </>
