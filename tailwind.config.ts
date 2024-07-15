@@ -15,6 +15,9 @@ const config: Config = {
       },
       colors : {
         'point' : '#2CC597'
+      },
+      borderWidth: {
+        '1': '1px'
       }
     },
   },
