@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       aspectRatio: {
         '3/4' : '6 / 10',
-        '4/5' : '9 /10'
+        '4/5' : '9 /10',
+        'card' : '25 / 32'
       },
       colors : {
         'point' : '#2CC597'
