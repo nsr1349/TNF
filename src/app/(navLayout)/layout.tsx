@@ -9,8 +9,7 @@ export default function NavLayout({
 }>) {
   return (
       <>
-        <header className="grid place-items-center border-b-zinc-900 border-b-2 sticky top-0 bg-zinc-950 z-50">
-          <div className="px-6 flex items-center h-16 w-full max-w-[1200px]">
+        <header className="flex items-center h-16 px-4 border-b-zinc-900 border-b-2 sticky top-0 bg-zinc-950 z-50">
             <Link href={'/'} className="text-2xl font-bold mx-8">TNF</Link>
             <Navbar />
             <div className="flex gap-4">
@@ -21,9 +20,8 @@ export default function NavLayout({
                 <FaUser />
               </div>
             </div>
-          </div>
         </header>
-        <main className="w-full max-w-[1200px] min-h-screen mx-auto flex flex-col items-center pb-20">
+        <main className="w-full min-h-screen mx-auto flex flex-col items-center pb-20">
           {children}
         </main>
         <footer>

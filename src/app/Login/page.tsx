@@ -2,7 +2,7 @@
 
 import { supabase } from '@/lib/supabaseClient';
 
-export default function SignIn() {
+export default function Login() {
   const handleKakaoSignIn = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'kakao',
