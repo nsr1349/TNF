@@ -17,6 +17,11 @@
 body {
 }
 
+.center {
+  @apply grid place-items-center
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
