@@ -6,37 +6,30 @@ const categories = [
   {
     title : '전략',
     icon : <FaChessKnight/>,
-    genre : 'Strategy'
   },
   {
     title : '추리',
     icon : <FaMapPin/>,
-    genre : 'Reasoning'
   },
   {
     title : '블러핑',
     icon : <FaFaceGrinTongue/>,
-    genre : 'Bluffing'
   },
   {
     title : '트릭테이킹',
     icon : <FaPuzzlePiece/>,
-    genre : 'TrickTaking'
   },
   {
     title : '순발력',
     icon : <FaBolt/>,
-    genre : 'Alacrity'
   },
   {
     title : '추상',
     icon : <FaPuzzlePiece/>,
-    genre : 'Abstraction'
   },
   {
     title : '방탈출',
     icon : <FaRightFromBracket/>,
-    genre : 'RoomEscape'
   },
 ]
 
@@ -51,8 +44,8 @@ export default async function Home() {
       </section>
       <section className="flex gap-8 my-20">
         {
-          categories.map(({genre,icon,title})=>
-            <Link key={title} href={`/boardgame?genre=${genre}`} className="text-center group">
+          categories.map(({icon,title})=>
+            <Link key={title} href={`/boardgame?genre=${title}`} className="text-center group">
               <div className="text-3xl bg-zinc-900 h-20 aspect-square p-2 mb-4 rounded-full grid place-items-center transition-all group-hover:bg-zinc-800 group-hover:text-indigo-700">
                 {icon}
               </div>

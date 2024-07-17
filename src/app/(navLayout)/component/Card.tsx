@@ -9,7 +9,7 @@ export default function Card({href='/', w='w-48'}) {
                     <Image className="h-full object-cover" src={'/덤불속.png'} alt="너구리" width={500} height={500}/>
                 </div>
                 <p className="text-zinc-500 text-sm">오잉크 게임즈</p>
-                <h3 className="font-bold text-lg mt-1 mb-3">덤불속</h3>
+                <h3 className="text-lg mt-1 mb-3">덤불속</h3>
                 <div className="flex justify-between">
                     <div className="bg-red-700 px-3 content-center rounded-md text-xs font-bold">-60%</div>
                     <p className="text-right text-xl font-bold">₩28800</p>
