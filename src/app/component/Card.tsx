@@ -19,7 +19,7 @@ export default function Card({
     brand,
     } : CardProps) {
     return (
-        <Link href={`/boardGame/${id}`}>
+        <Link href={`/boardgame/${id}`}>
             <article className="border-zinc-900 overflow-hidden transition-all">
                 <div className={`mb-1 aspect-card overflow-hidden border-2 border-zinc-900 rounded-md w- ${w}`}>
                     <Image className="h-full object-cover" src={image} alt="너구리" width={500} height={500}/>
