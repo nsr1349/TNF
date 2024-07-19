@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { BoardgameDetailItem } from "./mocks"
 import { FaHeart, FaUser } from "react-icons/fa6";
 import Tab from "./components/Tap";
 import Stars from "./components/Stars";
