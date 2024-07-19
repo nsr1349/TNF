@@ -30,8 +30,9 @@ interface Review {
 
 interface News {
     _id : string
+    title : string
     content : string
     createAt : string
     image : string
-    explain : string
+    description : string
 }
