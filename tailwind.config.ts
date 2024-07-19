@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['S-CoreDream-3Light', 'sans-serif'],
+      },
       aspectRatio: {
         '3/4' : '6 / 10',
         '4/5' : '9 /10',
