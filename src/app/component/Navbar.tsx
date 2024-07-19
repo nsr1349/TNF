@@ -13,7 +13,7 @@ export default function Navbar() {
                     <Link 
                         key={href} 
                         href={href} 
-                        className={"h-full px-4 font-bold transition-all grid place-items-center hover:text-white " + (path.indexOf(href) === 0 ? 'text-white' : 'text-gray-400')} >
+                        className={"h-full px-4 font-bold transition-all grid place-items-center hover:text-purewhite " + (path.indexOf(href) === 0 ? 'text-purewhite' : 'text-gray')} >
                         {text}
                     </Link>
                 )

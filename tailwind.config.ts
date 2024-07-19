@@ -17,7 +17,13 @@ const config: Config = {
         'card' : '25 / 32'
       },
       colors : {
-        'point' : '#2CC597'
+        'main' : '#18181B',
+        'sub' : '#27272A',
+        'gray' : '#71717A',
+        'purewhite' : '#F4F4F5',
+        'point' : '#46CDAC',
+        'subhover' : '#3F3F46',
+        'warning' : '#B91C1C',
       },
       borderWidth: {
         '1': '1px'

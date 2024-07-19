@@ -37,7 +37,7 @@ export default async function Home() {
   
   return (
     <>
-      <section className="w-full bg-zinc-500 min-h-96">
+      <section className="w-full bg-gray min-h-96">
         <div>
           슬라이더
         </div>
@@ -46,7 +46,7 @@ export default async function Home() {
         {
           categories.map(({icon,title})=>
             <Link key={title} href={`/boardgame?genre=${title}`} className="text-center group">
-              <div className="text-3xl bg-zinc-900 h-20 aspect-square p-2 mb-4 rounded-full grid place-items-center transition-all group-hover:bg-zinc-800 group-hover:text-indigo-700">
+              <div className="text-3xl bg-sub h-20 aspect-square p-2 mb-4 rounded-full grid place-items-center transition-all group-hover:bg-subhover group-hover:text-point">
                 {icon}
               </div>
               <h6>{title}</h6>
@@ -64,10 +64,10 @@ export default async function Home() {
       <section className="max-w-[900px] w-full">
         <h3 className="text-2xl font-bold mb-6">곧 출시</h3>
         <div className="flex gap-4">
-          <div className="bg-zinc-800 h-80 w-full">
+          <div className="bg-subhover h-80 w-full">
 
           </div>
-          <div className="bg-zinc-800 h-80  w-full">
+          <div className="bg-subhover h-80  w-full">
 
           </div>
         </div>

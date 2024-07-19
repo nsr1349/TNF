@@ -9,9 +9,9 @@ export default function NewsDetail({ params } : NewsDetailProps) {
     console.log(id)
     return (
         <div className="w-full max-w-[1000px] px-6">
-            <div className="w-fit px-5 py-1 rounded-md bg-indigo-700 font-bold mt-8 mb-5">신작</div>
+            <div className="w-fit px-5 py-1 rounded-md bg-point font-bold mt-8 mb-5">신작</div>
             <h1 className="font-bold text-3xl">8월 20일 사가니 리메이크 출시</h1>
-            <div className="w-full aspect-video border-1 border-zinc-800 rounded-md mt-5 mb-8">
+            <div className="w-full aspect-video border-1 border-sub rounded-md mt-5 mb-8">
                 
             </div>
             <p>

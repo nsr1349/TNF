@@ -37,9 +37,9 @@ export default async function Boardgame({ searchParams } : BoardgameProps) {
       <h3 className="flex-grow ml-4 font-bold text-lg">
         {
           genre || people || brand ? <>
-          {people ? <span className="text-indigo-600">{people}</span> : ''}
-          {brand ? <span className="text-indigo-600">{brand}의</span> : ''}
-          {genre ? <span className="text-indigo-600">{genre}</span> : ''}
+          {people ? <span className="text-point">{people}</span> : ''}
+          {brand ? <span className="text-point">{brand}의</span> : ''}
+          {genre ? <span className="text-point">{genre}</span> : ''}
           게임만 보기! 총 {count}개 
           </> : <span className="text-zinc-500">필터 미적용</span>
         }

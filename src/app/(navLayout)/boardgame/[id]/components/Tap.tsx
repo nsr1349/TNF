@@ -12,9 +12,9 @@ export default function Tab({labels, children} : TabProps) {
 
     return (
         <>
-            <div className="flex  w-full text-xl border-b-1 border-zinc-900">
+            <div className="flex  w-full text-xl border-b-1 border-sub">
                 {labels.map((a, i)=> 
-                    <div className={`py-4 w-48 text-center border-zinc-900 rounded-t-md ${activeIndex === i && 'border-1'}`} key={a} onClick={()=> setActiveIndex(i)}>{a}</div>
+                    <div className={`py-4 w-48 text-center border-sub rounded-t-md ${activeIndex === i && 'border-1'}`} key={a} onClick={()=> setActiveIndex(i)}>{a}</div>
                 )}
             </div>
             <div>
