@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaChessKnight, FaMapPin, FaFaceGrinTongue, FaBolt, FaPuzzlePiece, FaRightFromBracket} from "react-icons/fa6";
-import Card from "./component/Card";
+import Card from "../component/Card";
 
 const categories = [
   {
@@ -34,7 +34,7 @@ const categories = [
 ]
 
 export default async function Home() {
-
+  
   return (
     <>
       <section className="w-full bg-zinc-500 min-h-96">
@@ -56,9 +56,9 @@ export default async function Home() {
       <section className="max-w-[900px] w-full mb-20">
         <h3 className="text-2xl font-bold mb-6">새 신작</h3>
         <div className="flex justify-between">
-          {Array.from({ length: 4 }, (_, index) => (
+          {/* {Array.from({ length: 4 }, (_, index) => (
               <Card key={index}/>
-          ))}
+          ))} */}
         </div>
       </section>
       <section className="max-w-[900px] w-full">
