@@ -3,6 +3,7 @@ import { BoardgameDetailItem } from "./mocks"
 import { FaHeart, FaUser } from "react-icons/fa6";
 import Tab from "./components/Tap";
 import Stars from "./components/Stars";
+import { supabase } from "@/utils/supabase/client";
 
 interface BoardgameDetailProps {
   params : { 
@@ -10,11 +11,10 @@ interface BoardgameDetailProps {
   }
 }
 
-export default function BoardgameDetail({ params }: BoardgameDetailProps) {
-  const { id } = params
-  const {_id, title, ageCut, brand, price, deliveryCharge, explain, genre, image, peopleCut, playTime, point, relatedProducts, review } = BoardgameDetailItem
-  console.log(id)
-
+export default async function BoardgameDetail({ params : { id } }: BoardgameDetailProps) {
+  const { data: boardGame } = await supabase.from('boardGame').select('*').eq('id', id).single()
+  const { title, ageCut, brand, price, deliveryCharge, genre, image, peopleCut, playTime, point } = boardGame
+  console.log(boardGame)
   return (
     <>
     <div className="w-full max-w-[900px]">
@@ -24,14 +24,14 @@ export default function BoardgameDetail({ params }: BoardgameDetailProps) {
               <Image className="h-full object-cover scale-75" src={image} alt={title} width={400} height={400}/>
           </div>
           <div className='h-24 overflow-hidden border-sub border-2'>
-              {/* <Image className="h-full object-cover scale-75" src={image} alt={title} width={420} height={420}/> */}
+              
           </div>
         </div>
         <div className="flex-grow flex flex-col">
           <div className="flex mb-10">
             <div className="flex-grow">
               <h1 className="text-3xl font-extrabold">{title}</h1>
-              <p className="text-gray mt-4">{`${ageCut}세 이상, ${peopleCut}, ${playTime}`}</p>
+              <p className="text-gray mt-4">{`${ageCut ? `${ageCut}세 이상` : '전체이용가'}, ${peopleCut}, ${playTime}`}</p>
             </div>
             <FaHeart size={30} className="text-gray"/>
           </div>
@@ -43,7 +43,7 @@ export default function BoardgameDetail({ params }: BoardgameDetailProps) {
                 </tr>
                 <tr>
                   <td className="text-gray">장르</td>
-                  <td>{genre.join(', ')}</td>
+                  <td>{genre}</td>
                 </tr>
                 <tr>
                   <td className="text-gray">베송비</td>
@@ -71,8 +71,8 @@ export default function BoardgameDetail({ params }: BoardgameDetailProps) {
         </div>
       </section>
       <section className="w-full">
-        <Tab labels={['공지사항' , '리뷰']}>
-          <div>공지사항 탭 !!!!!!!!!!!!!!</div>
+        <Tab labels={['상세정보' , '리뷰']}>
+          <div>상세정보 탭 !!!!!!!!!!!!!!</div>
           <div>
             <h3 className="font-bold text-xl mt-14 mb-4">리뷰 평균</h3>
             <div className="bg-sub p-10 flex rounded-md item-center">
@@ -98,7 +98,6 @@ export default function BoardgameDetail({ params }: BoardgameDetailProps) {
         </Tab>
       </section>
     </div>
-      
     </>
   );
 }
