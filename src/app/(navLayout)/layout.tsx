@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Navbar from "@/app/component/Navbar";
 import { FaUser, FaCartShopping } from "react-icons/fa6";
-import { createClient } from "@/utils/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 export default async function NavLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser()
   console.log(user)
   return (

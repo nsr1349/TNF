@@ -1,7 +1,7 @@
 import Card from "../../component/Card";
 import { FaFilter, FaSearch  } from "react-icons/fa";
 import Link from "next/link";
-import { createClient } from "@/utils/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 interface BoardgameProps {
   searchParams : { 
@@ -15,7 +15,6 @@ interface BoardgameProps {
 
 export default async function Boardgame({ searchParams } : BoardgameProps) {
   const { page = 1, genre, people, brand, search = '' } = searchParams
-  const supabase = createClient();
   let query = supabase
   .from('boardGame')
   .select('id,title,image,price,brand', { count: 'exact' })
