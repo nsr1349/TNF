@@ -10,11 +10,11 @@ interface BoardGame {
     peopleCut : string
     playTime : string
     brand : string
-    genre : string[]
+    genre : string
     deliveryCharge : number
     point : number
     price : number
-    explain : string
+    description : string
     relatedProducts : string[]
 }
 
