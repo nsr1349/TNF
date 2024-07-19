@@ -26,7 +26,6 @@ export default async function Boardgame({ searchParams } : BoardgameProps) {
   query = query.range((page - 1) * 16 , (page * 16) - 1)
 
   const { data: boardGame, error, count } = await query
-  console.log(boardGame)
 
   return (
     <>
