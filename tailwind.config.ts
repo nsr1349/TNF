@@ -27,7 +27,10 @@ const config: Config = {
       },
       borderWidth: {
         '1': '1px'
-      }
+      },
+      screens: {
+        sm: { max: "819px" },
+      },
     },
   },
   plugins: [],
