@@ -12,7 +12,6 @@ interface BoardgameFilterProps {
         brand? : string
         search? : string
     }
-    count : number | null 
 }
 
 const filterOptions = [
@@ -30,7 +29,7 @@ const filterOptions = [
     },
 ]
 
-export default function BoardgameFilter({ searchParams, count } : BoardgameFilterProps) {
+export default function BoardgameFilter({ searchParams } : BoardgameFilterProps) {
     const { genre, people, brand, search = '' } = searchParams
     const [ isOpenModal , setIsOpenModal ] = useState(false)
     const router = useRouter();
@@ -55,8 +54,8 @@ export default function BoardgameFilter({ searchParams, count } : BoardgameFilte
     }
 
     return (          
-        <section className="w-full max-w-[900px] py-10 px-4">
-            <form action={filterAction} className="flex w-full items-center max-w-[900px]">
+        <section className="w-full py-10">
+            <form action={filterAction} className="flex w-full items-center">
                 {isOpenModal && 
                     <div className="fixed top-0 left-0 w-screen h-screen bg-[rgba(0,0,0,0.5)] z-50 center">
                         <div className="bg-main w-4/5 max-w-[1000px] px-10 py-10 relative">
@@ -97,7 +96,7 @@ export default function BoardgameFilter({ searchParams, count } : BoardgameFilte
                     <h3 className="flex-grow ml-4 font-bold text-lg">
                     {genre || people || brand ? <>
                         <span className="text-point">{people && people} {brand && brand + '의 '} {genre && genre}</span> 
-                        <span> 게임만 보기! {count ? ` 총 ${count}개` : ''}</span>
+                        <span> 게임만 보기! </span>
                         </> : <span className="text-gray">필터 미적용</span>}
                     </h3>
                 </div>

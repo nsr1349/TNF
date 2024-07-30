@@ -27,11 +27,17 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
 .center {
   @apply grid place-items-center
 }
+
 .full {
   @apply h-full w-full
+}
+
+.w-container {
+  @apply w-full max-w-[1000px]
 }
 
 @layer utilities {

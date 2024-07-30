@@ -19,11 +19,9 @@ export default function Card({
     brand,
     } : CardProps) {
     return (
-        <Link href={`/boardgame/${id}`}>
-            <article className="border-sub overflow-hidden transition-all">
-                <div className={`mb-1 aspect-card overflow-hidden border-2 border-sub rounded-md w- ${w}`}>
-                    <Image className="h-full object-cover" src={image} alt="너구리" width={500} height={500}/>
-                </div>
+        <Link href={`/boardgame/${id}`} className={`group ${w}`}>
+            <article>
+                <Image className="group-hover:border-gray transition border-1 mb-1 border-sub object-cover" src={image} alt="너구리" width={500} height={500}/>
                 <p className="text-gray text-sm">{brand}</p>
                 <h3 className="text-lg mt-1 mb-3">{title}</h3>
                 <div className="flex justify-between">
