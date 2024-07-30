@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FaChessKnight, FaMapPin, FaFaceGrinTongue, FaBolt, FaPuzzlePiece, FaRightFromBracket} from "react-icons/fa6";
 import Card from "../component/Card";
+import Slider from "../component/Slider";
+import Image from "next/image";
 
 const categories = [
   {
@@ -32,16 +34,22 @@ const categories = [
     icon : <FaRightFromBracket/>,
   },
 ]
-
+{/* <Image className="w-full h-full object-cover" src='/slideItem1.jpg' alt="슬라이드 아이템" width={5000} height={2000}></Image> */}
 export default async function Home() {
   
   return (
     <>
-      <section className="w-full bg-gray min-h-96">
-        <div>
-          슬라이더
+      <Slider>
+        {/* <div className="w-100px h-full bg-red-100">
+          1
+          
         </div>
-      </section>
+        <div>2</div>
+        <div>3</div> */}
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </Slider>
       <section className="flex gap-8 my-20">
         {
           categories.map(({icon,title})=>

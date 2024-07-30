@@ -24,10 +24,15 @@
 body {
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
 .center {
   @apply grid place-items-center
 }
-
+.full {
+  @apply h-full w-full
+}
 
 @layer utilities {
   .text-balance {
