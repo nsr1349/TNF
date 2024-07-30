@@ -1,5 +1,5 @@
 interface SkeletonProps {
-    className : string
+    className? : string
 }
 
 export const Skeleton = ({className, ...props} : SkeletonProps) => {

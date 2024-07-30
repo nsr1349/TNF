@@ -2,7 +2,7 @@ import Card from "@/app/component/Card";
 import Link from "next/link";
 import { supabase } from "@/utils/supabase/client";
 import { BoardgameOptionsType } from "../page";
-import CardFallback from "@/app/component/CardFallback";
+
 interface BoardgameListProps {
     searchParams : BoardgameOptionsType
 }
@@ -25,9 +25,9 @@ export default async function BoardgameList({ searchParams } : BoardgameListProp
 
     return (
         <>
-            <section className="w-full grid grid-cols-4 gap-x-8 gap-y-20">
+            <section className="w-full flex gap-6 justify-evenly flex-wrap">
                 { boardGame?.map((boardGameData)=> 
-                    <Card key={boardGameData.id} {...boardGameData}/>)}
+                    <Card key={boardGameData.id} {...boardGameData} />)}
             </section>
             <section className="mt-20 flex gap-2 justify-center">
                 { Array.from({length: Math.ceil( count / PAGE_PRODUCT_COUNT )}, (v, i) => i + 1).map((a)=>

@@ -17,7 +17,7 @@ interface BoardgameProps {
   searchParams : BoardgameOptionsType
 }
 
-export default async function Boardgame({ searchParams } : BoardgameProps) {
+export default async function page({ searchParams } : BoardgameProps) {
   return (
     <div className="w-container px-4">
       <BoardgameFilter searchParams={searchParams}/>
