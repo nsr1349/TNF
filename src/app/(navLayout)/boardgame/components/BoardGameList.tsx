@@ -20,16 +20,14 @@ export default async function BoardgameList({ searchParams } : BoardgameListProp
     query = query.range((page - 1) * PAGE_PRODUCT_COUNT , (page * PAGE_PRODUCT_COUNT) - 1)
 
     const { data: boardGame, error, count } = await query
-    
+
     if (!count) return
 
     return (
         <>
             <section className="w-full grid grid-cols-4 gap-x-8 gap-y-20">
                 { boardGame?.map((boardGameData)=> 
-                    <Card key={boardGameData.id} {...boardGameData}/>)
-                }
-                <CardFallback/>
+                    <Card key={boardGameData.id} {...boardGameData}/>)}
             </section>
             <section className="mt-20 flex gap-2 justify-center">
                 { Array.from({length: Math.ceil( count / PAGE_PRODUCT_COUNT )}, (v, i) => i + 1).map((a)=>
