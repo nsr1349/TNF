@@ -1,16 +1,12 @@
-import { supabase } from "@/utils/supabase/client";
+import { signOut } from "@/actions/auth";
 
 export default function My() {
 
-  // const handleKakaoSignIn = async () => {
-
-  //   const { error } = await supabase.auth.signOut()
-  //   console.log(error)
-  // };
-
   return (
     <>
-      <button>logout</button>
+    <form action={signOut}>
+        <button type="submit">logout</button>
+    </form>
     </>
   );
 }

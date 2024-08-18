@@ -1,64 +1,11 @@
 import { SubmitButton } from "./components/SubmitButton";
-import { redirect } from "next/navigation";
-import { headers } from "next/headers";
-import { createClient } from "@/utils/supabase/server";
-import KakaoLoginBtn from "./components/KakaoLoginBtn";
+import { signIn, signUp } from "@/actions/auth";
 
-export default function Login({ searchParams }: {
+interface LoginProps {
   searchParams: { message: string };
-}) {
+}
 
-  const signIn = async (formData: FormData) => {
-    "use server";
-
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    console.log(email, password)
-    const supabase = createClient();
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
-
-    return redirect("/");
-  };
-
-  const signUp = async (formData: FormData) => {
-    "use server";
-
-    const origin = headers().get("origin");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const supabase = createClient();
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${origin}/auth/callback`,
-      },
-    });
-
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
-
-    return redirect("/login?message=Check email to continue sign in process");
-  };
-
-  const kakaoLogin = async (formData: FormData) => {
-    "use server";
-    const supabase = createClient();
-    const { data ,error } = await supabase.auth.signInWithOAuth({
-        provider: 'kakao',
-    });
-
-
-    return redirect("/");
-  };
+export default function Login({ searchParams }: LoginProps) {
 
   return (
       <div className="w-screen h-screen text-center content-center">
