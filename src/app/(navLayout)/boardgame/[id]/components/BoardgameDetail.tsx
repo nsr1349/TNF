@@ -3,6 +3,8 @@ import { FaHeart, FaUser } from "react-icons/fa6";
 import Tab from "./Tap";
 import Stars from "./Stars";
 import { supabase } from "@/utils/supabase/client";
+import AddCartBtn from "./AddCartBtn";
+import { createClient } from "@/utils/supabase/server"; 
 
 interface BoardgameDetailProps {
     id : string
@@ -11,6 +13,9 @@ interface BoardgameDetailProps {
 export default async function BoardgameDetail({ id }: BoardgameDetailProps) {
     const { data: boardGame } = await supabase.from('boardGame').select('*').eq('id', id).single()
     const { title, ageCut, brand, price, deliveryCharge, genre, image, peopleCut, playTime, point } = boardGame
+
+    const supabaseServer = createClient();
+    const { data: { user } } = await supabaseServer.auth.getUser();
 
     const detailTable = [
         {
@@ -69,7 +74,7 @@ export default async function BoardgameDetail({ id }: BoardgameDetailProps) {
                         {price}
                         <span className="text-xl font-medium"> won</span></h1>
                     </div>
-                    <button className="w-full bg-purewhite text-main h-14 font-bold py-2 hover:bg-point transition-all duration-200">장바구니 담기</button>
+                    <AddCartBtn product_id={id} image={image} user_id={user?.id}/>
                 </div>
             </section>
             <section className="w-full">
