@@ -1,11 +1,12 @@
 'use client'
 
-import { supabase } from "@/utils/supabase/client";
+import { createClient } from "@/utils/supabase/server";
 import Image from "next/image";
 
 export default function KakaoLoginBtn() {
 
     const handleKakaoSignIn = async () => {
+        const supabase = createClient();
         const { data ,error } = await supabase.auth.signInWithOAuth({
             provider: 'kakao',
         });
