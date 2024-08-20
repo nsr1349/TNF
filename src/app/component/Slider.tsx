@@ -1,60 +1,50 @@
 'use client'
 
 import { useState } from "react"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Link from "next/link";
 
-interface TabProps {
-    children : React.ReactNode[]
-}
+const slideImages = [
+    {
+        img : '/슬라이드/보드게임슬라이드1.jpg',
+        link : '/boardgame/1'
+    },
+    {
+        img : '/슬라이드/보드게임슬라이드2.jpg',
+        link : '/boardgame/2'
+    },
+    {
+        img : '/슬라이드/보드게임슬라이드3.jpg',
+        link : '/boardgame/3'
+    },
+]
 
-export default function Slider({ children } : TabProps) {
-    const [ idx , setIdx ] = useState(0)
-    const len = children.length
+export default function Slider() {
+    const [ slideIdx , setSlideIdx ] = useState(0)
+    const len = slideImages.length
+
+    const moveSlide = (moveNum : number) => {
+        setSlideIdx((currntIdx)=> {
+            const newIdx = currntIdx + moveNum
+            if (newIdx === -1) return len - 1
+            if (newIdx === len) return 0
+            return newIdx
+        })
+    }
 
     return (
-        <>  
-            <div className="w-full h-[700px] overflow-hidden" >
-                <div className='flex h-full transition'
-                    style={{
-                        width: `${len}00%`,
-                        transform: `translateX(-${idx * 100}dvw)`
-                    }}>
-                    {children && children.map((child , i)=>
-                        <div className="w-screen bg-green-800 flex-grow h-full" key={i}>{child}</div>
-                    )}
-                </div>
+        <>
+            <div className="relative w-full h-[600px] overflow-hidden bg-center bg-cover bg-no-repeat transition-all" style={{backgroundImage : `url(${slideImages[slideIdx].img})`}} onClick={() => console.log(1)}>  
+                <button className="w-20 absolute left-0 inset-y-0 bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(-1)}><IoIosArrowBack/></button>
+                <button className="w-20 absolute right-0 inset-y-0 bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(1)}><IoIosArrowForward/></button>
+                <Link className="absolute h-full w-[calc(100%_-_10rem)] left-20" href={slideImages[slideIdx].link}/>
             </div>
-            <div>{idx}</div>
-            <button onClick={()=> setIdx(0 < idx ? idx-1 : idx)}>뒤로</button>
-            <button onClick={()=> setIdx(idx < len-1 ? idx+1 : idx)}>앞으로</button>
+            <div className=" w-fit flex gap-3 mt-4">
+                {
+                    slideImages.map((_, i) => 
+                        <button key={i} className={`rounded-full w-4 aspect-square transition-all ${slideIdx === i ? 'bg-purewhite' : 'bg-gray'}`} onClick={()=> setSlideIdx(i)} />
+                )}
+            </div>
         </>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* {children && children.map((child, i)=>
-                    <div key={i} >
-                        {child}
-                    </div>
-                )} */}
