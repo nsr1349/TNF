@@ -7,7 +7,7 @@ export default async function HomeBoardgames({...props}) {
     return (
         <section className="max-w-[900px] w-full mb-20">
             <h3 className="text-2xl font-bold mb-6">새 신작</h3>
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-2 flex-wrap">
                 {boardGame?.map(({id, title, brand, image, price})=> 
                     <Card key={id} id={id} title={title} brand={brand} image={image} price={price}/> 
                 )}

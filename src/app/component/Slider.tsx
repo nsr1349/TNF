@@ -34,15 +34,15 @@ export default function Slider() {
 
     return (
         <>
-            <div className="relative w-full h-[600px] overflow-hidden bg-center bg-cover bg-no-repeat transition-all" style={{backgroundImage : `url(${slideImages[slideIdx].img})`}} onClick={() => console.log(1)}>  
-                <button className="w-20 absolute left-0 inset-y-0 bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(-1)}><IoIosArrowBack/></button>
-                <button className="w-20 absolute right-0 inset-y-0 bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(1)}><IoIosArrowForward/></button>
+            <div className="sm:h-[220px] relative w-full h-[600px] overflow-hidden bg-center bg-cover bg-no-repeat transition-all" style={{backgroundImage : `url(${slideImages[slideIdx].img})`}} onClick={() => console.log(1)}>  
+                <button className="sm:w-12 w-20 absolute left-0 inset-y-0 bg-[rgba(0,0,0,0.1)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(-1)}><IoIosArrowBack/></button>
+                <button className="sm:w-12 w-20 absolute right-0 inset-y-0 bg-[rgba(0,0,0,0.1)] hover:bg-[rgba(0,0,0,0.5)] transition-all center text-4xl" onClick={()=> moveSlide(1)}><IoIosArrowForward/></button>
                 <Link className="absolute h-full w-[calc(100%_-_10rem)] left-20" href={slideImages[slideIdx].link}/>
             </div>
             <div className=" w-fit flex gap-3 mt-4">
                 {
                     slideImages.map((_, i) => 
-                        <button key={i} className={`rounded-full w-4 aspect-square transition-all ${slideIdx === i ? 'bg-purewhite' : 'bg-gray'}`} onClick={()=> setSlideIdx(i)} />
+                        <button key={i} className={`rounded-full w-2 aspect-square transition-all ${slideIdx === i ? 'bg-purewhite scale-150' : 'bg-gray'}`} onClick={()=> setSlideIdx(i)} />
                 )}
             </div>
         </>

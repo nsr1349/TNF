@@ -5,6 +5,7 @@ import HomeBoardgames from "./components/HomeBoardgames";
 import HomeNews from "./components/HomeNews";
 import { Suspense } from "react";
 
+
 const categories = [
   {
     title : '전략',
@@ -42,10 +43,10 @@ export default async function Home() {
     <>
       <Slider />
       <div className="px-4 w-container">
-        <section className="flex gap-8 my-20 item-center justify-center">
+        <section className="sm:my-10 flex gap-8 my-20 item-center justify-center flex-wrap">
           {categories.map(({icon,title})=>
-              <Link key={title} href={`/boardgame?genre=${title}`} className="text-center group">
-                <div className="text-3xl bg-sub h-20 aspect-square p-2 mb-4 rounded-full grid place-items-center transition-all group-hover:bg-subhover group-hover:text-point">
+              <Link key={title} href={`/boardgame?genre=${title}`} className="group center">
+                <div className="sm:text-xl sm:h-14 text-3xl bg-sub h-20 aspect-square p-2 mb-4 rounded-full grid place-items-center transition-all group-hover:bg-subhover group-hover:text-point">
                   {icon}
                 </div>
                 <h6>{title}</h6>
