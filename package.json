@@ -12,6 +12,8 @@
     "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.44.2",
+    "@tosspayments/payment-widget-sdk": "^0.11.1",
+    "@tosspayments/tosspayments-sdk": "^2.2.4",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
