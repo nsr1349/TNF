@@ -30,7 +30,8 @@ export default async function NavLayout({ children }: Readonly<{
         <main className="w-full min-h-screen mx-auto flex flex-col items-center pb-20">
           {children}
         </main>
-        <footer>
+        <footer className="border-sub border-t-1 h-24 center text-gray">
+          <p>email : nsr1349@naver.com</p>
         </footer>
       </>
   );
