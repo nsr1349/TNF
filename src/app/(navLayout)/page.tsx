@@ -5,7 +5,6 @@ import HomeBoardgames from "./components/HomeBoardgames";
 import HomeNews from "./components/HomeNews";
 import { Suspense } from "react";
 
-
 const categories = [
   {
     title : '전략',
@@ -37,8 +36,7 @@ const categories = [
   },
 ]
 
-export default async function Home() {
-
+export default function Home() {
   return (
     <>
       <Slider />
