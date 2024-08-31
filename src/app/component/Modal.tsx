@@ -1,5 +1,8 @@
 'use client'
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 interface ModalProps {
     isOpen : boolean
     closeModal: ()=> void
@@ -7,9 +10,11 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, closeModal, children } : ModalProps) {
-    
-    
-    return (
+    const $modalPotal = document.getElementById('modal-potal')
+
+    if (!$modalPotal) return 
+
+    return ReactDOM.createPortal(
         <>
             {
                 isOpen && <>
@@ -19,6 +24,7 @@ export default function Modal({ isOpen, closeModal, children } : ModalProps) {
                     </div>
                 </>           
             }
-        </>
+        </>,
+        $modalPotal
     );
 }

@@ -10,6 +10,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" >
       <body className="bg-main text-purewhite">
+          <div id="modal-potal"/>
           {children}
       </body>
     </html>
