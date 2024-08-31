@@ -21,7 +21,7 @@ export default async function BoardgameList({ searchParams } : BoardgameListProp
 
     const { data: boardGame, error, count } = await query
 
-    if (!count) return
+    if (!count) return <p className="text-gray">조건에 맞는 보드게임이 1개도 없어요..</p>
 
     return (
         <>
