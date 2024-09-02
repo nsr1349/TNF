@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import CartItem from "./components/CartItem";
-import { orderAction } from "./action/action";
+import { orderAction } from "@/actions/order";
 
 export interface ProductType {
     id : string
